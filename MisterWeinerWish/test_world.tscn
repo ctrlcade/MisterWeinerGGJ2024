@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://0d4mxv1xlvdk"]
+
+[ext_resource type="Script" path="res://HelloWorld.cs" id="1_o83j7"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1le4b"]
+
+[node name="TestWorld" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_1le4b")
+script = ExtResource("1_o83j7")
