@@ -7,12 +7,7 @@ public partial class game_manager : Node
 	[Signal]
 	public delegate void ToggleGamePausedEventHandler(bool isPaused);
 
-	bool _isPaused;
-
-	public override void _Ready()
-	{
-		GamePaused = false;
-	}
+	private bool _isPaused = false;
 
 	[Export]
 	bool GamePaused
@@ -25,7 +20,7 @@ public partial class game_manager : Node
 	{
 		if (@event.IsActionPressed("pause"))
 		{
-			GamePaused = !GamePaused;
+			GamePaused = !_isPaused;
 		}
 	}
 }
