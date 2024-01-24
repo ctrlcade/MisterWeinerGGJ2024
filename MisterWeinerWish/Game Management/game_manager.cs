@@ -9,12 +9,12 @@ public partial class game_manager : Node
 
 	bool _isPaused;
 
-    public override void _Ready()
-    {
-        GamePaused = false;
-    }
+	public override void _Ready()
+	{
+		GamePaused = false;
+	}
 
-    [Export]
+	[Export]
 	bool GamePaused
 	{
 		get {return _isPaused;}

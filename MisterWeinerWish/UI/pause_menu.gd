@@ -1,12 +1,14 @@
 extends Control
 
+@onready var resume_button: Button = $Panel/MarginContainer/VBoxContainer/VBoxContainer2/ResumeButton
+
 func _ready() -> void:
-	hide()
 	GameManager.connect("ToggleGamePaused", _on_toggle_pause)
 
 func _on_toggle_pause(is_paused: bool) -> void:
 	if(is_paused):
 		show()
+		resume_button.grab_focus()
 	else:
 		hide()
 

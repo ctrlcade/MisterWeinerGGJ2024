@@ -4,6 +4,7 @@
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,14 +55,26 @@ theme_override_constants/separation = 10
 
 [node name="ResumeButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../RestartButton")
+focus_next = NodePath("../RestartButton")
+focus_previous = NodePath("../QuitButton")
 text = "Resume"
 
 [node name="RestartButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../ResumeButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+focus_next = NodePath("../QuitButton")
+focus_previous = NodePath("../ResumeButton")
 text = "Restart"
 
 [node name="QuitButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../RestartButton")
+focus_neighbor_bottom = NodePath("../ResumeButton")
+focus_next = NodePath("../ResumeButton")
+focus_previous = NodePath("../RestartButton")
 text = "Quit"
 
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/VBoxContainer2/ResumeButton" to="." method="_on_resume_button_pressed"]
