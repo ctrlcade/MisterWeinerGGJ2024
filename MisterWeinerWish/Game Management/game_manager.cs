@@ -9,6 +9,10 @@ public partial class game_manager : Node
 	[Signal]
 	public delegate void ToggleGamePausedEventHandler(bool isPaused);
 
+	// Stores the timer node.
+	[Export]
+	Timer timer;
+	bool gameStarted = false;
 	private bool _isPaused = false;
 
 	// Getter and Setter for _isPaused. Setting GamePaused to anything will automatically emit the signal.
@@ -16,14 +20,63 @@ public partial class game_manager : Node
 	bool GamePaused
 	{
 		get {return _isPaused;}
-		set {_isPaused = value; EmitSignal(SignalName.ToggleGamePaused, _isPaused); GetTree().Paused = GamePaused;}
+		set 
+		{
+			_isPaused = value; 
+			EmitSignal(SignalName.ToggleGamePaused, _isPaused); 
+			GetTree().Paused = GamePaused; 
+		}
 	}
 
-	public override void _Input(InputEvent @event)
+	
+	// Because this script has been made autoloaded, this runs right at the start of the game.
+    public override void _Ready()
+    {
+		// Start the timer and connect signal for when the timer runs out.
+        //timer = GetNode<Timer>("Timer");
+		timer.Timeout += OnTimerTimeout;
+		timer.Start();
+
+		GamePaused = false;
+    }
+
+    public override void _Process(double delta)
+    {
+		timer.Paused = GetTree().Paused;
+    }
+
+	public void StartGame()
 	{
-		if (@event.IsActionPressed("pause"))
+		gameStarted = true;
+		CustomReady();
+	}
+
+	public void EndGame()
+	{
+		gameStarted = false;
+	}
+
+	// Runs when the game scene is actually running
+	private void CustomReady()
+	{
+		
+	}
+
+    public override void _Input(InputEvent @event)
+	{
+		if (@event.IsActionPressed("pause") && gameStarted)
 		{
 			GamePaused = !_isPaused;
 		}
+	}
+
+	private void OnTimerTimeout()
+	{
+		
+	}
+
+	private void IncreaseTime(float value)
+	{
+		timer.Start(timer.TimeLeft + value);
 	}
 }

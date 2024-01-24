@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://UI/pause_menu.gd" id="1_fanrs"]
 
 [node name="PauseMenu" type="Control"]
-process_mode = 2
 visible = false
 layout_mode = 3
 anchors_preset = 15

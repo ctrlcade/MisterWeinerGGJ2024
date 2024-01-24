@@ -4,7 +4,7 @@ extends Control
 
 func _ready() -> void:
 	GameManager.connect("ToggleGamePaused", _on_toggle_pause)
-
+	
 # Using a signal to avoid checking constantly using _process
 func _on_toggle_pause(is_paused: bool) -> void:
 	if(is_paused):
