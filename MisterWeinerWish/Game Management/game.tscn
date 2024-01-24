@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1jnywpht4uww"]
+[gd_scene load_steps=6 format=3 uid="uid://b1jnywpht4uww"]
 
 [ext_resource type="Script" path="res://Game Management/game_manager.cs" id="1_7d3nu"]
 [ext_resource type="PackedScene" uid="uid://0d4mxv1xlvdk" path="res://test_world.tscn" id="1_wp8a5"]
 [ext_resource type="PackedScene" uid="uid://cvv3d3uowos7e" path="res://UI/pause_menu.tscn" id="2_2didg"]
 [ext_resource type="PackedScene" uid="uid://chny8bia0x5w8" path="res://UI/timer_ui.tscn" id="4_nx3hg"]
+[ext_resource type="PackedScene" uid="uid://b1kuw37doi10x" path="res://UI/lose_screen.tscn" id="5_lf76w"]
 
 [node name="Game" type="Node" node_paths=PackedStringArray("timer")]
 process_mode = 3
@@ -17,6 +18,9 @@ timer = NodePath("Timer")
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("2_2didg")]
 
 [node name="TimerUI" parent="CanvasLayer" node_paths=PackedStringArray("timer") instance=ExtResource("4_nx3hg")]
+timer = NodePath("../../Timer")
+
+[node name="LoseScreen" parent="CanvasLayer" node_paths=PackedStringArray("timer") instance=ExtResource("5_lf76w")]
 timer = NodePath("../../Timer")
 
 [node name="Timer" type="Timer" parent="."]

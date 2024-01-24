@@ -30,20 +30,26 @@ public partial class game_manager : Node
 
 	
 	// Because this script has been made autoloaded, this runs right at the start of the game.
-    public override void _Ready()
-    {
+	public override void _Ready()
+	{
 		// Start the timer and connect signal for when the timer runs out.
-        //timer = GetNode<Timer>("Timer");
+		//timer = GetNode<Timer>("Timer");
 		timer.Timeout += OnTimerTimeout;
 		timer.Start();
 
 		GamePaused = false;
-    }
+		gameStarted = false;
+	}
 
-    public override void _Process(double delta)
-    {
+	public override void _Process(double delta)
+	{
+		if (gameStarted)
+		{
+			CustomUpdate(delta);
+		}
+
 		timer.Paused = GetTree().Paused;
-    }
+	}
 
 	public void StartGame()
 	{
@@ -56,13 +62,18 @@ public partial class game_manager : Node
 		gameStarted = false;
 	}
 
-	// Runs when the game scene is actually running
+	// Runs when the game has started
 	private void CustomReady()
 	{
 		
 	}
 
-    public override void _Input(InputEvent @event)
+	private void CustomUpdate(double delta)
+	{
+		
+	}
+
+	public override void _Input(InputEvent @event)
 	{
 		if (@event.IsActionPressed("pause") && gameStarted)
 		{
