@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=2 format=3 uid="uid://14lugdrfobjw"]
+
+[ext_resource type="Script" path="res://Food/food_data.gd" id="1_7pe12"]
+
+[resource]
+script = ExtResource("1_7pe12")
+path_to_mesh = "res://Food/Foods/Food Meshes/chocolate.tres"
+growthAmount = -10
+increases_time = false
