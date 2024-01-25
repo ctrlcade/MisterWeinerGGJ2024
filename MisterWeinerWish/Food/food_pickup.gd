@@ -17,3 +17,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		GlobalSettings.TimeChange(food_data.growthAmount)
 	else:
 		pass # Tell the dog to get larger!
+		
+	# Removes this food pickup from the scene
+	queue_free()
