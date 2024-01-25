@@ -6,6 +6,9 @@ public partial class global_settings : Node
 	[Signal]
 	public delegate void ToggleGamePausedEventHandler(bool isPaused);
 
+	[Signal]
+	public delegate void IncreaseTimeEventHandler(float amount);
+
 	private bool _isPaused = false;
 
 	public void SetPauseGame(bool isPaused)
@@ -18,5 +21,10 @@ public partial class global_settings : Node
 	public bool GetPauseGame()
 	{
 		return _isPaused;
+	}
+
+	public void TimeChange(float value)
+	{
+		EmitSignal(SignalName.IncreaseTime, value);
 	}
 }

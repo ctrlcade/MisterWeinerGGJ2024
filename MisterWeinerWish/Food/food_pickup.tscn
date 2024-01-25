@@ -6,7 +6,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0idw6"]
 
-[node name="FoodPickup" type="Node3D"]
+[node name="FoodPickup" type="Node3D" groups=["pickup"]]
 script = ExtResource("1_fiq5m")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

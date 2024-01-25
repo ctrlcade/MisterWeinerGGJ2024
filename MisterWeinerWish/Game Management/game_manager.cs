@@ -15,6 +15,7 @@ public partial class game_manager : Node
 	{
 		// Store the global settings here in ready for later use.
 		g_settings = GetNode<global_settings>("/root/GlobalSettings");
+		g_settings.IncreaseTime += IncreaseTimeLimit;
 
 		// Start the timer and connect signal for when the timer runs out.
 		timer = GetNode<Timer>("Timer");
@@ -45,8 +46,9 @@ public partial class game_manager : Node
 		GD.Print("Time ran out!");
 	}
 
-	private void IncreaseTime(float value)
+	public void IncreaseTimeLimit(float value)
 	{
+		GD.Print("Time Increased!");
 		timer.Start(timer.TimeLeft + value);
 	}
 }
