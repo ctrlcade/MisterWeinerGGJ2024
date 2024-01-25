@@ -40,4 +40,4 @@ mesh = SubResource("PlaneMesh_86pi2")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_3d1jc")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_tbm2m")]
+[node name="MisterWeiner" parent="." instance=ExtResource("1_tbm2m")]
