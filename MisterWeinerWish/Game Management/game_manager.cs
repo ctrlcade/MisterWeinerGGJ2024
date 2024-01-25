@@ -11,7 +11,7 @@ public partial class game_manager : Node
 
 	// Stores the timer node.
 	[Export]
-	Timer timer;
+	Timer timer = new();
 	bool gameStarted = false;
 	private bool _isPaused = false;
 
