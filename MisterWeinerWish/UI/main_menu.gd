@@ -8,7 +8,6 @@ func _ready() -> void:
 
 func _on_start_button_pressed() -> void:
 	get_tree().change_scene_to_packed(game_scene)
-	GameManager.StartGame()
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()

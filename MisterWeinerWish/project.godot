@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://Game Management/game_manager.cs"
+GlobalSettings="*res://Game Management/global_settings.cs"
 
 [dotnet]
 

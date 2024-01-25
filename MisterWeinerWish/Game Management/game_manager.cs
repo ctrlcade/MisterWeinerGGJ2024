@@ -5,85 +5,44 @@ using System.Dynamic;
 // This script has been made an autoloaded script, and can be accessed in other scripts using 'GameManager'.
 public partial class game_manager : Node
 {
-	// This signal should be used to let other scripts know if the game is paused or not, so they don't need to check constantly in _Process.
-	[Signal]
-	public delegate void ToggleGamePausedEventHandler(bool isPaused);
-
+	// Global Settings
+	global_settings g_settings;
 	// Stores the timer node.
-	[Export]
-	Timer timer = new();
-	bool gameStarted = false;
-	private bool _isPaused = false;
-
-	// Getter and Setter for _isPaused. Setting GamePaused to anything will automatically emit the signal.
-	[Export]
-	bool GamePaused
-	{
-		get {return _isPaused;}
-		set 
-		{
-			_isPaused = value; 
-			EmitSignal(SignalName.ToggleGamePaused, _isPaused); 
-			GetTree().Paused = GamePaused; 
-		}
-	}
-
+	Timer timer;
 	
 	// Because this script has been made autoloaded, this runs right at the start of the game.
 	public override void _Ready()
 	{
+		// Store the global settings here in ready for later use.
+		g_settings = GetNode<global_settings>("/root/GlobalSettings");
+
 		// Start the timer and connect signal for when the timer runs out.
-		//timer = GetNode<Timer>("Timer");
+		timer = GetNode<Timer>("Timer");
 		timer.Timeout += OnTimerTimeout;
 		timer.Start();
-
-		GamePaused = false;
-		gameStarted = false;
 	}
 
 	public override void _Process(double delta)
 	{
-		if (gameStarted)
-		{
-			CustomUpdate(delta);
-		}
-
-		timer.Paused = GetTree().Paused;
+		timer.Paused = g_settings.GetPauseGame();
 	}
 
-	public void StartGame()
+	public void OnTogglePaused()
 	{
-		gameStarted = true;
-		CustomReady();
-	}
 
-	public void EndGame()
-	{
-		gameStarted = false;
-	}
-
-	// Runs when the game has started
-	private void CustomReady()
-	{
-		
-	}
-
-	private void CustomUpdate(double delta)
-	{
-		
 	}
 
 	public override void _Input(InputEvent @event)
 	{
-		if (@event.IsActionPressed("pause") && gameStarted)
+		if (@event.IsActionPressed("pause"))
 		{
-			GamePaused = !_isPaused;
+			g_settings.SetPauseGame(!g_settings.GetPauseGame());
 		}
 	}
 
 	private void OnTimerTimeout()
 	{
-		
+		GD.Print("Time ran out!");
 	}
 
 	private void IncreaseTime(float value)
