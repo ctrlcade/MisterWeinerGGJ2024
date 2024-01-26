@@ -6,10 +6,36 @@ public partial class test_player : CharacterBody3D
 	private const float Speed = 10.0f;
 	private const float RotationSpeed = 1f;
 
+	// current amount of middle weenies
+	private int _weenieCounter = 1;
+
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	private float _gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
 	
 	private Vector3 _velocity = Vector3.Zero;
+
+	private void GrowWeiner()
+	{
+		// get Node3D refs for the current middle weiner and the back weiner
+		Node3D curMiddleWeiner = GetNode<Node3D>("WeinerMiddle");
+		Node3D backWeiner = GetNode<Node3D>("WeinerBack");
+		
+		// reposition camera whenever weiner grows
+		SpringArm3D weinerCam = GetNode<SpringArm3D>("CameraAnchor/SpringArm3D");
+		weinerCam.Position = new Vector3(weinerCam.Position.X, weinerCam.Position.Y+0.25f, weinerCam.Position.Z+1.25f);
+		
+		// instantiate middle weiner mesh, give it unique name so its easier to reference
+		PackedScene middleWeinerMesh = GD.Load<PackedScene>("res://Models/WeinerMiddle.glb");
+		AddChild(middleWeinerMesh.Instantiate(), true);
+		
+		// add the weiner mesh to the current middle weiners position, increment weenie counter so name reference grobs newest instantiated weenie
+		Node3D newMiddleWeiner = GetNode<Node3D>("WeinerMiddle" + _weenieCounter++);
+		newMiddleWeiner.Position = curMiddleWeiner.Position;
+		
+		// reposition the current and back weiner to make space for the new middle weiner
+		curMiddleWeiner.Position = new Vector3(curMiddleWeiner.Position.X, curMiddleWeiner.Position.Y, curMiddleWeiner.Position.Z+1f);
+		backWeiner.Position = new Vector3(backWeiner.Position.X, backWeiner.Position.Y, backWeiner.Position.Z+1f);
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{

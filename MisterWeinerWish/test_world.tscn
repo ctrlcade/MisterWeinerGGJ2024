@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://0d4mxv1xlvdk"]
+[gd_scene load_steps=12 format=3 uid="uid://0d4mxv1xlvdk"]
 
 [ext_resource type="PackedScene" uid="uid://dm8haby1hgvvf" path="res://test_player.tscn" id="1_tbm2m"]
 [ext_resource type="Script" path="res://Food/food_spawner.gd" id="2_265yd"]
@@ -22,12 +22,6 @@ sky = SubResource("Sky_kq2gt")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_86pi2"]
-size = Vector2(30, 30)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3d1jc"]
-data = PackedVector3Array(15, 0, 15, -15, 0, 15, 15, 0, -15, -15, 0, 15, -15, 0, -15, 15, 0, -15)
-
 [node name="TestWorld" type="Node3D"]
 process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -38,14 +32,6 @@ environment = SubResource("Environment_dcxla")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_86pi2")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_3d1jc")
 
 [node name="MisterWeiner" parent="." instance=ExtResource("1_tbm2m")]
 
@@ -67,3 +53,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.626, 0, -6.004)
 
 [node name="Marker3D5" type="Marker3D" parent="FoodSpawnPoints" groups=["food_spawn_point"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.326, 0, -6.004)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+use_collision = true
+size = Vector3(25, 1, 25)

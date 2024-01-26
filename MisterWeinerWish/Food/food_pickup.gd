@@ -6,7 +6,6 @@ extends Node3D
 func _ready() -> void:
 	mesh_instance_3d.mesh = load(food_data.path_to_mesh)
 
-
 func _physics_process(delta: float) -> void:
 	mesh_instance_3d.rotate_y(delta)
 
@@ -16,7 +15,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	if (food_data.increases_time):
 		GlobalSettings.TimeChange(food_data.growthAmount)
 	else:
-		pass # Tell the dog to get larger!
+		pass	 # Tell the dog to get larger!
 		
 	# Removes this food pickup from the scene
 	queue_free()
