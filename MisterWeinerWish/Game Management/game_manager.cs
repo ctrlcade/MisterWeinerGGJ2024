@@ -44,6 +44,7 @@ public partial class game_manager : Node
 	private void OnTimerTimeout()
 	{
 		GD.Print("Time ran out!");
+		GetTree().Paused = true;
 	}
 
 	public void IncreaseTimeLimit(float value)

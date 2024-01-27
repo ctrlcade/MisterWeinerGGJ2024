@@ -1,8 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const SPEED = 7.0
 
 var _velocity = Vector3.ZERO
 var _weenieCounter = 1
@@ -25,9 +24,12 @@ func grow_weiner():
 	var middleWeinerMesh = load("res://Models/WeinerMiddle.glb")
 	add_child(middleWeinerMesh.instantiate(), true)
 	
+	_weenieCounter = _weenieCounter + 1;
+	
 	# add the weiner mesh to the current middle weiners position, increment weenie counter so name reference grobs newest instantiated weenie
-	var newMiddleWeiner = get_node("WeinerMiddle" + _weenieCounter+1)
+	var newMiddleWeiner = get_node("WeinerMiddle" + str(_weenieCounter))
 	newMiddleWeiner.position = curMiddleWeiner.position;
+	print(_weenieCounter)
 	
 	# reposition the current and back weiner to make space for the new middle weiner
 	curMiddleWeiner.position = Vector3(curMiddleWeiner.position.x, curMiddleWeiner.position.y, curMiddleWeiner.position.z+1);
@@ -60,9 +62,9 @@ func _tank_controls(delta):
 
 	# Left/Right player rotation
 	if (Input.is_action_pressed("Left")):
-		rotate_y(1 * delta);
+		rotate_y(2 * delta);
 	if (Input.is_action_pressed("Right")):
-		rotate_y(-1 * delta);
+		rotate_y(-2 * delta);
 
 	# add the gravity back into the current velocity vector
 	_velocity.y = velocityY;

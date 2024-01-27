@@ -1,13 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://0d4mxv1xlvdk"]
+[gd_scene load_steps=14 format=3 uid="uid://0d4mxv1xlvdk"]
 
 [ext_resource type="PackedScene" uid="uid://dm8haby1hgvvf" path="res://test_player.tscn" id="1_tbm2m"]
 [ext_resource type="Script" path="res://Food/food_spawner.gd" id="2_265yd"]
-[ext_resource type="Resource" uid="uid://ogn7s464rkpd" path="res://Food/Foods/steak.tres" id="4_bhhgw"]
-[ext_resource type="Resource" uid="uid://co8rysxgd3rwv" path="res://Food/Foods/apple.tres" id="4_kaik7"]
-[ext_resource type="Resource" uid="uid://dysvfe322cl34" path="res://Food/Foods/avocado.tres" id="4_o1cks"]
-[ext_resource type="Resource" uid="uid://14lugdrfobjw" path="res://Food/Foods/chocolate.tres" id="5_112y7"]
-[ext_resource type="Resource" uid="uid://b0c6sa1uthpyu" path="res://Food/Foods/pancake.tres" id="6_o2aiu"]
-[ext_resource type="Resource" uid="uid://e0odnwv5d3p3" path="res://Food/Foods/pie.tres" id="7_smmi0"]
+[ext_resource type="Script" path="res://Food/food_data.gd" id="3_uothk"]
+[ext_resource type="PackedScene" uid="uid://b7452e3ctc0vq" path="res://Models/Level.glb" id="4_7nov1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2v7l8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -22,6 +18,42 @@ sky = SubResource("Sky_kq2gt")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="Resource" id="Resource_6dubj"]
+script = ExtResource("3_uothk")
+path_to_mesh = "res://Food/Foods/Food Meshes/apple.tres"
+growthAmount = 1
+increases_time = false
+
+[sub_resource type="Resource" id="Resource_27bwt"]
+script = ExtResource("3_uothk")
+path_to_mesh = "res://Food/Foods/Food Meshes/avocado.tres"
+growthAmount = -5
+increases_time = false
+
+[sub_resource type="Resource" id="Resource_r7brk"]
+script = ExtResource("3_uothk")
+path_to_mesh = "res://Food/Foods/Food Meshes/chocolate.tres"
+growthAmount = -10
+increases_time = false
+
+[sub_resource type="Resource" id="Resource_kbxdj"]
+script = ExtResource("3_uothk")
+path_to_mesh = "res://Food/Foods/Food Meshes/pancake.tres"
+growthAmount = 3
+increases_time = false
+
+[sub_resource type="Resource" id="Resource_ygsuh"]
+script = ExtResource("3_uothk")
+path_to_mesh = "res://Food/Foods/Food Meshes/pie.tres"
+growthAmount = 5
+increases_time = false
+
+[sub_resource type="Resource" id="Resource_qmpps"]
+script = ExtResource("3_uothk")
+path_to_mesh = "res://Food/Foods/Food Meshes/apple.tres"
+growthAmount = 10
+increases_time = false
+
 [node name="TestWorld" type="Node3D"]
 process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -34,10 +66,11 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="MisterWeiner" parent="." instance=ExtResource("1_tbm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
 [node name="FoodSpawnPoints" type="Node3D" parent="."]
 script = ExtResource("2_265yd")
-foods = Array[Resource("res://Food/food_data.gd")]([ExtResource("4_kaik7"), ExtResource("4_o1cks"), ExtResource("5_112y7"), ExtResource("6_o2aiu"), ExtResource("7_smmi0"), ExtResource("4_bhhgw")])
+foods = Array[ExtResource("3_uothk")]([SubResource("Resource_6dubj"), SubResource("Resource_27bwt"), SubResource("Resource_r7brk"), SubResource("Resource_kbxdj"), SubResource("Resource_ygsuh"), SubResource("Resource_qmpps")])
 
 [node name="Marker3D" type="Marker3D" parent="FoodSpawnPoints" groups=["food_spawn_point"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.834, 0, 0)
@@ -54,7 +87,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.626, 0, -6.004)
 [node name="Marker3D5" type="Marker3D" parent="FoodSpawnPoints" groups=["food_spawn_point"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.326, 0, -6.004)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-use_collision = true
-size = Vector3(25, 1, 25)
+[node name="Level" parent="." instance=ExtResource("4_7nov1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)

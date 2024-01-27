@@ -6,8 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="909ac2ed-4c3c-4d4f-bf48-165c55db5ac0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Mister Weiner Wish/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mister Weiner Wish/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Food/Foods/Food Meshes/apple.tres" beforeDir="false" afterPath="$PROJECT_DIR$/Food/Foods/Food Meshes/apple.tres" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Food/Foods/Food Meshes/avocado.tres" beforeDir="false" afterPath="$PROJECT_DIR$/Food/Foods/Food Meshes/avocado.tres" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Food/Foods/Food Meshes/chocolate.tres" beforeDir="false" afterPath="$PROJECT_DIR$/Food/Foods/Food Meshes/chocolate.tres" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Food/Foods/Food Meshes/pancake.tres" beforeDir="false" afterPath="$PROJECT_DIR$/Food/Foods/Food Meshes/pancake.tres" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Food/Foods/Food Meshes/pie.tres" beforeDir="false" afterPath="$PROJECT_DIR$/Food/Foods/Food Meshes/pie.tres" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Food/Foods/Food Meshes/steak.tres" beforeDir="false" afterPath="$PROJECT_DIR$/Food/Foods/Food Meshes/steak.tres" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Food/Foods/apple.tres" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Food/Foods/avocado.tres" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Food/Foods/chocolate.tres" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Food/Foods/pancake.tres" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Food/Foods/pie.tres" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Food/Foods/steak.tres" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Food/food_pickup.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Food/food_pickup.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/test_player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Food/food_pickup.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Food/food_pickup.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game Management/game_manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Game Management/game_manager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/lose_screen.gd" beforeDir="false" afterPath="$PROJECT_DIR$/UI/lose_screen.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/pause_menu.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/UI/pause_menu.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_player.gd" beforeDir="false" afterPath="$PROJECT_DIR$/test_player.gd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_player.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/test_player.tscn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_world.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/test_world.tscn" afterDir="false" />
     </list>
@@ -86,6 +102,7 @@
       <updated>1706176968634</updated>
       <workItem from="1706176971263" duration="3025000" />
       <workItem from="1706284441293" duration="17565000" />
+      <workItem from="1706386478723" duration="2281000" />
     </task>
     <servers />
   </component>

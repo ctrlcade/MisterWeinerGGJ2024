@@ -11,7 +11,7 @@ height = 5.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_55c6c"]
 
-[node name="MisterWeiner" type="CharacterBody3D"]
+[node name="MisterWeiner" type="CharacterBody3D" groups=["weenie"]]
 script = ExtResource("1_3jths")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="FoodData" load_steps=2 format=3 uid="uid://e0odnwv5d3p3"]
-
-[ext_resource type="Script" path="res://Food/food_data.gd" id="2_4e6gt"]
-
-[resource]
-script = ExtResource("2_4e6gt")
-path_to_mesh = "res://Food/Foods/Food Meshes/pie.tres"
-growthAmount = 5
-increases_time = false
