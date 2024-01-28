@@ -21,7 +21,7 @@ func grow_weiner():
 	weinerCam.position = Vector3(weinerCam.position.x, weinerCam.position.y+0.25, weinerCam.position.z+1.25)
 	
 	# instantiate middle weiner mesh, give it unique name so its easier to reference
-	var middleWeinerMesh = load("res://Models/WeinerMiddle.glb")
+	var middleWeinerMesh = load("res://Mr Weiner/WeinerMiddle.glb")
 	add_child(middleWeinerMesh.instantiate(), true)
 	
 	_weenieCounter = _weenieCounter + 1;

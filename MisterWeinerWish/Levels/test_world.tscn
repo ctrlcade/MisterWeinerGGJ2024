@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dm8haby1hgvvf" path="res://Mr Weiner/test_player.tscn" id="1_2yjd8"]
 [ext_resource type="Script" path="res://Food/food_spawner.gd" id="2_265yd"]
 [ext_resource type="Script" path="res://Food/food_data.gd" id="3_uothk"]
-[ext_resource type="PackedScene" uid="uid://b7452e3ctc0vq" path="res://Models/Level.glb" id="4_7nov1"]
+[ext_resource type="PackedScene" uid="uid://b7452e3ctc0vq" path="res://Levels/Level.glb" id="4_7nov1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2v7l8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

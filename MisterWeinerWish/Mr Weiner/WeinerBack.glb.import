@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://kldf8xm8ehf1"
-path="res://.godot/imported/WeinerBack.glb-1623e10e8b8f6568f67995601efa15d2.scn"
+path="res://.godot/imported/WeinerBack.glb-8d53f41ef9ca704a5aba7563799f8ec4.scn"
 
 [deps]
 
-source_file="res://Models/WeinerBack.glb"
-dest_files=["res://.godot/imported/WeinerBack.glb-1623e10e8b8f6568f67995601efa15d2.scn"]
+source_file="res://Mr Weiner/WeinerBack.glb"
+dest_files=["res://.godot/imported/WeinerBack.glb-8d53f41ef9ca704a5aba7563799f8ec4.scn"]
 
 [params]
 

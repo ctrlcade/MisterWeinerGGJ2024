@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://dm8haby1hgvvf"]
 
-[ext_resource type="Script" path="res://test_player.gd" id="1_3jths"]
-[ext_resource type="PackedScene" uid="uid://kldf8xm8ehf1" path="res://Models/WeinerBack.glb" id="2_acfos"]
-[ext_resource type="PackedScene" uid="uid://diwoifw1qqfdb" path="res://Models/WeinerMiddle.glb" id="3_750of"]
-[ext_resource type="PackedScene" uid="uid://2wqjhduvtxvq" path="res://Models/WeinerFront.glb" id="4_hf51p"]
+[ext_resource type="Script" path="res://Mr Weiner/test_player.gd" id="1_wxfif"]
+[ext_resource type="PackedScene" uid="uid://kldf8xm8ehf1" path="res://Mr Weiner/WeinerBack.glb" id="2_ukwxl"]
+[ext_resource type="PackedScene" uid="uid://2wqjhduvtxvq" path="res://Mr Weiner/WeinerFront.glb" id="3_iy8ef"]
+[ext_resource type="PackedScene" uid="uid://diwoifw1qqfdb" path="res://Mr Weiner/WeinerMiddle.glb" id="4_v04r7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0cklc"]
 radius = 0.75
@@ -12,7 +12,7 @@ height = 5.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_55c6c"]
 
 [node name="MisterWeiner" type="CharacterBody3D" groups=["weenie"]]
-script = ExtResource("1_3jths")
+script = ExtResource("1_wxfif")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.8, 0)
@@ -26,11 +26,11 @@ shape = SubResource("BoxShape3D_55c6c")
 
 [node name="Camera3D" type="Camera3D" parent="CameraAnchor/SpringArm3D"]
 
-[node name="WeinerBack" parent="." instance=ExtResource("2_acfos")]
+[node name="WeinerBack" parent="." instance=ExtResource("2_ukwxl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="WeinerFront" parent="." instance=ExtResource("4_hf51p")]
+[node name="WeinerFront" parent="." instance=ExtResource("3_iy8ef")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="WeinerMiddle" parent="." instance=ExtResource("3_750of")]
+[node name="WeinerMiddle" parent="." instance=ExtResource("4_v04r7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

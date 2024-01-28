@@ -1,6 +1,6 @@
 extends Control
 
-@export var game_scene: PackedScene = preload("res://test_world.tscn")
+@export var game_scene: PackedScene = preload("res://Levels/test_world.tscn")
 @onready var start_button: Button = $MarginContainer/VBoxContainer/StartButton
 
 func _ready() -> void:
