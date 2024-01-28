@@ -2,9 +2,12 @@ extends Node3D
 
 @export var food_data : FoodData
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
+# Temporary fix for the scale issue of food models. Should be removed once it's fixed
+@export var new_scale: Vector3 = Vector3(0.5, 0.5, 0.5)
 
 func _ready() -> void:
 	mesh_instance_3d.mesh = load(food_data.path_to_mesh)
+	mesh_instance_3d.scale = new_scale
 
 func _physics_process(delta: float) -> void:
 	mesh_instance_3d.rotate_y(delta)
