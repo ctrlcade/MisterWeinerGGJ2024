@@ -1,16 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ml67en27xjl7"]
+[gd_scene load_steps=2 format=3 uid="uid://ml67en27xjl7"]
 
 [ext_resource type="Script" path="res://Food/food_spawner.gd" id="1_6cxfs"]
-[ext_resource type="Resource" uid="uid://co8rysxgd3rwv" path="res://Food/Foods/apple.tres" id="2_nxf0m"]
-[ext_resource type="Resource" uid="uid://dysvfe322cl34" path="res://Food/Foods/avocado.tres" id="3_ifqwj"]
-[ext_resource type="Resource" uid="uid://14lugdrfobjw" path="res://Food/Foods/chocolate.tres" id="4_ltn6x"]
-[ext_resource type="Resource" uid="uid://b0c6sa1uthpyu" path="res://Food/Foods/pancake.tres" id="5_h44sr"]
-[ext_resource type="Resource" uid="uid://e0odnwv5d3p3" path="res://Food/Foods/pie.tres" id="6_ws2fs"]
-[ext_resource type="Resource" uid="uid://ogn7s464rkpd" path="res://Food/Foods/steak.tres" id="7_yx0uh"]
 
 [node name="FoodSpawnPoints" type="Node3D"]
 script = ExtResource("1_6cxfs")
-foods = Array[Resource("res://Food/food_data.gd")]([ExtResource("2_nxf0m"), ExtResource("3_ifqwj"), ExtResource("4_ltn6x"), ExtResource("5_h44sr"), ExtResource("6_ws2fs"), ExtResource("7_yx0uh")])
 
 [node name="Marker3D" type="Marker3D" parent="." groups=["food_spawn_point"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.834, 0, 0)

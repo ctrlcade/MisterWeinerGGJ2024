@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://0d4mxv1xlvdk"]
+[gd_scene load_steps=15 format=3 uid="uid://0d4mxv1xlvdk"]
 
 [ext_resource type="PackedScene" uid="uid://dm8haby1hgvvf" path="res://Mr Weiner/test_player.tscn" id="1_2yjd8"]
 [ext_resource type="Script" path="res://Food/food_spawner.gd" id="2_265yd"]
 [ext_resource type="Script" path="res://Food/food_data.gd" id="3_uothk"]
 [ext_resource type="PackedScene" uid="uid://b7452e3ctc0vq" path="res://Levels/Level.glb" id="4_7nov1"]
+[ext_resource type="PackedScene" uid="uid://fmkgu73tetja" path="res://Lock On/lock_on_point.tscn" id="5_i5kly"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2v7l8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -77,10 +78,10 @@ foods = Array[ExtResource("3_uothk")]([SubResource("Resource_6dubj"), SubResourc
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.834, 0, 0)
 
 [node name="Marker3D2" type="Marker3D" parent="FoodSpawnPoints" groups=["food_spawn_point"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3761, 5.79898, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.376, 0, 0)
 
 [node name="Marker3D3" type="Marker3D" parent="FoodSpawnPoints" groups=["food_spawn_point"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6264, 5.79898, 10.4067)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.626, 0, 10.407)
 
 [node name="Marker3D4" type="Marker3D" parent="FoodSpawnPoints" groups=["food_spawn_point"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.626, 0, -6.004)
@@ -90,3 +91,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.326, 0, -6.004)
 
 [node name="Level" parent="." instance=ExtResource("4_7nov1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="LockOnPoint" parent="." instance=ExtResource("5_i5kly")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.33092, -0.5, 7.09941)
+
+[node name="LockOnPoint2" parent="." instance=ExtResource("5_i5kly")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.33092, -0.5, -2.50945)
+
+[node name="LockOnPoint3" parent="." instance=ExtResource("5_i5kly")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9148, -0.5, -2.50945)
