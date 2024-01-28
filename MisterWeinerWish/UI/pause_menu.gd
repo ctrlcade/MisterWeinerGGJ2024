@@ -19,6 +19,7 @@ func _on_resume_button_pressed() -> void:
 
 func _on_restart_button_pressed() -> void:
 	GlobalSettings.SetPauseGame(false)
+	get_tree().change_scene_to_file("res://Game Management/game.tscn")
 
 
 func _on_quit_button_pressed() -> void:

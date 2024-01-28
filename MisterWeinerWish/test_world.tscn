@@ -50,7 +50,7 @@ increases_time = false
 
 [sub_resource type="Resource" id="Resource_qmpps"]
 script = ExtResource("3_uothk")
-path_to_mesh = "res://Food/Foods/Food Meshes/apple.tres"
+path_to_mesh = "res://Food/Foods/Food Meshes/steak.tres"
 growthAmount = 10
 increases_time = false
 
@@ -67,6 +67,7 @@ shadow_enabled = true
 
 [node name="MisterWeiner" parent="." instance=ExtResource("1_tbm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+collision_layer = 2
 
 [node name="FoodSpawnPoints" type="Node3D" parent="."]
 script = ExtResource("2_265yd")
