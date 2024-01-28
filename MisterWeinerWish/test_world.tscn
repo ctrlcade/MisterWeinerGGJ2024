@@ -1,13 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://0d4mxv1xlvdk"]
+[gd_scene load_steps=9 format=3 uid="uid://0d4mxv1xlvdk"]
 
 [ext_resource type="PackedScene" uid="uid://dm8haby1hgvvf" path="res://test_player.tscn" id="1_tbm2m"]
-[ext_resource type="Script" path="res://Food/food_spawner.gd" id="2_265yd"]
-[ext_resource type="Resource" uid="uid://ogn7s464rkpd" path="res://Food/Foods/steak.tres" id="4_bhhgw"]
-[ext_resource type="Resource" uid="uid://co8rysxgd3rwv" path="res://Food/Foods/apple.tres" id="4_kaik7"]
-[ext_resource type="Resource" uid="uid://dysvfe322cl34" path="res://Food/Foods/avocado.tres" id="4_o1cks"]
-[ext_resource type="Resource" uid="uid://14lugdrfobjw" path="res://Food/Foods/chocolate.tres" id="5_112y7"]
-[ext_resource type="Resource" uid="uid://b0c6sa1uthpyu" path="res://Food/Foods/pancake.tres" id="6_o2aiu"]
-[ext_resource type="Resource" uid="uid://e0odnwv5d3p3" path="res://Food/Foods/pie.tres" id="7_smmi0"]
+[ext_resource type="PackedScene" uid="uid://ml67en27xjl7" path="res://Food/food_spawn_points.tscn" id="2_i325p"]
+[ext_resource type="PackedScene" uid="uid://fmkgu73tetja" path="res://Lock On/lock_on_point.tscn" id="3_1p2ps"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2v7l8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -49,21 +44,15 @@ shape = SubResource("ConcavePolygonShape3D_3d1jc")
 
 [node name="MisterWeiner" parent="." instance=ExtResource("1_tbm2m")]
 
-[node name="FoodSpawnPoints" type="Node3D" parent="."]
-script = ExtResource("2_265yd")
-foods = Array[Resource("res://Food/food_data.gd")]([ExtResource("4_kaik7"), ExtResource("4_o1cks"), ExtResource("5_112y7"), ExtResource("6_o2aiu"), ExtResource("7_smmi0"), ExtResource("4_bhhgw")])
+[node name="FoodSpawnPoints" parent="." instance=ExtResource("2_i325p")]
 
-[node name="Marker3D" type="Marker3D" parent="FoodSpawnPoints" groups=["food_spawn_point"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.834, 0, 0)
+[node name="LockOnPoints" type="Node3D" parent="."]
 
-[node name="Marker3D2" type="Marker3D" parent="FoodSpawnPoints" groups=["food_spawn_point"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3761, 5.79898, 0)
+[node name="LockOnPoint" parent="LockOnPoints" instance=ExtResource("3_1p2ps")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.31782, 0, 0)
 
-[node name="Marker3D3" type="Marker3D" parent="FoodSpawnPoints" groups=["food_spawn_point"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6264, 5.79898, 10.4067)
+[node name="LockOnPoint2" parent="LockOnPoints" instance=ExtResource("3_1p2ps")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.31782, 0, -9.49043)
 
-[node name="Marker3D4" type="Marker3D" parent="FoodSpawnPoints" groups=["food_spawn_point"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.626, 0, -6.004)
-
-[node name="Marker3D5" type="Marker3D" parent="FoodSpawnPoints" groups=["food_spawn_point"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.326, 0, -6.004)
+[node name="LockOnPoint3" parent="LockOnPoints" instance=ExtResource("3_1p2ps")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.37267, 0, -9.49043)
