@@ -19,7 +19,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		GlobalSettings.TimeChange(food_data.growthAmount)
 	else:
 		var dog = get_tree().get_first_node_in_group("weenie")
-		dog.grow_weiner() # Tell the dog to get larger!
+		dog.grow_weiner_looper(food_data.growthAmount) # Tell the dog to get larger!
 		
 	# Removes this food pickup from the scene
 	queue_free()

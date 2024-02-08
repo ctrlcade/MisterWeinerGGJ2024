@@ -1,10 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://0d4mxv1xlvdk"]
+[gd_scene load_steps=14 format=3 uid="uid://0d4mxv1xlvdk"]
 
 [ext_resource type="PackedScene" uid="uid://dm8haby1hgvvf" path="res://Mr Weiner/test_player.tscn" id="1_2yjd8"]
 [ext_resource type="Script" path="res://Food/food_spawner.gd" id="2_265yd"]
-[ext_resource type="Script" path="res://Food/food_data.gd" id="3_uothk"]
+[ext_resource type="Resource" uid="uid://du5jpuqbt7ltm" path="res://Food/Foods/f_apple.tres" id="3_qq67f"]
 [ext_resource type="PackedScene" uid="uid://b7452e3ctc0vq" path="res://Levels/Level.glb" id="4_7nov1"]
+[ext_resource type="Resource" uid="uid://w3nuxlh1dyd0" path="res://Food/Foods/f_avocado.tres" id="4_7o7bo"]
+[ext_resource type="Resource" uid="uid://yobp7yagobnl" path="res://Food/Foods/f_chocolate.tres" id="5_2wbtb"]
 [ext_resource type="PackedScene" uid="uid://fmkgu73tetja" path="res://Lock On/lock_on_point.tscn" id="5_i5kly"]
+[ext_resource type="Resource" uid="uid://d4cxncq0ck5qc" path="res://Food/Foods/f_pancake.tres" id="6_yhtvb"]
+[ext_resource type="Resource" uid="uid://d00yaw5f6wmj5" path="res://Food/Foods/f_pie.tres" id="7_y6yhv"]
+[ext_resource type="Resource" uid="uid://d17hxma6vish6" path="res://Food/Foods/f_steak.tres" id="8_0af64"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2v7l8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -18,42 +23,6 @@ background_mode = 2
 sky = SubResource("Sky_kq2gt")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="Resource" id="Resource_6dubj"]
-script = ExtResource("3_uothk")
-path_to_mesh = "res://Food/Foods/Food Meshes/apple.tres"
-growthAmount = 1
-increases_time = false
-
-[sub_resource type="Resource" id="Resource_27bwt"]
-script = ExtResource("3_uothk")
-path_to_mesh = "res://Food/Foods/Food Meshes/avocado.tres"
-growthAmount = -5
-increases_time = false
-
-[sub_resource type="Resource" id="Resource_r7brk"]
-script = ExtResource("3_uothk")
-path_to_mesh = "res://Food/Foods/Food Meshes/chocolate.tres"
-growthAmount = -10
-increases_time = false
-
-[sub_resource type="Resource" id="Resource_kbxdj"]
-script = ExtResource("3_uothk")
-path_to_mesh = "res://Food/Foods/Food Meshes/pancake.tres"
-growthAmount = 3
-increases_time = false
-
-[sub_resource type="Resource" id="Resource_ygsuh"]
-script = ExtResource("3_uothk")
-path_to_mesh = "res://Food/Foods/Food Meshes/pie.tres"
-growthAmount = 5
-increases_time = false
-
-[sub_resource type="Resource" id="Resource_qmpps"]
-script = ExtResource("3_uothk")
-path_to_mesh = "res://Food/Foods/Food Meshes/steak.tres"
-growthAmount = 10
-increases_time = false
 
 [node name="TestWorld" type="Node3D"]
 process_mode = 1
@@ -72,7 +41,7 @@ collision_layer = 2
 
 [node name="FoodSpawnPoints" type="Node3D" parent="."]
 script = ExtResource("2_265yd")
-foods = Array[ExtResource("3_uothk")]([SubResource("Resource_6dubj"), SubResource("Resource_27bwt"), SubResource("Resource_r7brk"), SubResource("Resource_kbxdj"), SubResource("Resource_ygsuh"), SubResource("Resource_qmpps")])
+foods = Array[Resource("res://Food/food_data.gd")]([ExtResource("3_qq67f"), ExtResource("4_7o7bo"), ExtResource("5_2wbtb"), ExtResource("6_yhtvb"), ExtResource("7_y6yhv"), ExtResource("8_0af64")])
 
 [node name="Marker3D" type="Marker3D" parent="FoodSpawnPoints" groups=["food_spawn_point"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.834, 0, 0)

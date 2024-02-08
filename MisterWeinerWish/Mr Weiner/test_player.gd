@@ -10,6 +10,11 @@ var _weenieCounter = 1
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+# This allows for bigger foods to cause more growth.
+func grow_weiner_looper(growth_amount: int):
+	for n in growth_amount:
+		grow_weiner()
+
 func grow_weiner():
 	
 	# get Node3D refs for the current middle weiner and the back weiner
