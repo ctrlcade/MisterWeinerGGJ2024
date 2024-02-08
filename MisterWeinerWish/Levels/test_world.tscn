@@ -62,13 +62,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.326, 0, -6.004)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
 [node name="LockOnPoint" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_i5kly")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.33092, -0.5, 7.09941)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.33092, 10.4671, 7.09941)
 player = NodePath("../MisterWeiner")
 
 [node name="LockOnPoint2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_i5kly")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.33092, -0.5, -2.50945)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.33092, -0.5, -23.2345)
 player = NodePath("../MisterWeiner")
 
 [node name="LockOnPoint3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_i5kly")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9148, -0.5, -2.50945)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.4506, -0.5, -2.50945)
 player = NodePath("../MisterWeiner")

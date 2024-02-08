@@ -4,6 +4,7 @@ extends Node3D
 @export var player: CharacterBody3D
 var dog
 
+# Does the hiding of the glow here so that you can see where they are placed in the editor easily.
 func _ready() -> void:
 	mesh_instance_3d.hide()
 	dog = get_tree().get_first_node_in_group("weenie")
