@@ -24,7 +24,6 @@ script = ExtResource("1_bpduk")
 shape = SubResource("SphereShape3D_vxa5k")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-visible = false
 mesh = SubResource("SphereMesh_xyxb8")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

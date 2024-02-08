@@ -1,11 +1,12 @@
 extends CharacterBody3D
 
-
 const SPEED = 7.0
 
 var _velocity = Vector3.ZERO
 var _weenieCounter = 1
 
+func blorb() -> int:
+	return _weenieCounter
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
