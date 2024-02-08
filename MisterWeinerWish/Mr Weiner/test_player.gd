@@ -10,20 +10,6 @@ var _weenieCounter = 1
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-func find_lockon_points() -> void:
-	var lock_on_points = get_tree().get_nodes_in_group("lock_on_points")
-	
-	var distance = abs(position - lock_on_points[0].position)
-	var closest_point: LockOnPoint
-	
-	for lock_on_point: LockOnPoint in lock_on_points:
-		var new_distance = abs(position - lock_on_point.position)
-		if (new_distance < distance):
-			distance = new_distance
-			closest_point = lock_on_point
-			
-	closest_point.toggle_glow(true)
-
 func grow_weiner():
 	
 	# get Node3D refs for the current middle weiner and the back weiner
