@@ -54,8 +54,8 @@ func dog_bark():
 func _ready() -> void:
 	add_child(sound_player)
 	
-func _process(delta: float) -> void:
-	if Input.is_action_pressed("bark"):
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("bark"):
 		dog_bark()
 
 func _physics_process(delta):
