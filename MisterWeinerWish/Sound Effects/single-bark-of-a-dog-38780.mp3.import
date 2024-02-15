@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dhmfhapbht743"
+path="res://.godot/imported/single-bark-of-a-dog-38780.mp3-0588e296fbe92ca68fc2310d5b5dae00.mp3str"
+
+[deps]
+
+source_file="res://Sound Effects/single-bark-of-a-dog-38780.mp3"
+dest_files=["res://.godot/imported/single-bark-of-a-dog-38780.mp3-0588e296fbe92ca68fc2310d5b5dae00.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

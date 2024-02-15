@@ -11,7 +11,7 @@ func _ready() -> void:
 
 # Hides checks to see if the dog is nearby based on its length to see if it should glow.
 func _process(delta: float) -> void:
-	if global_position.distance_to(dog.global_position) < (dog.blorb() * 2):
+	if global_position.distance_to(dog.global_position) < (dog.get_weiner_counter() * 2):
 		mesh_instance_3d.visible = true
 	else:
 		mesh_instance_3d.visible = false

@@ -4,12 +4,17 @@ const SPEED = 7.0
 
 var _velocity = Vector3.ZERO
 var _weenieCounter = 1
-
-func blorb() -> int:
-	return _weenieCounter
+# This node should be used for all the dog's sound effects
+var sound_player = AudioStreamPlayer3D.new()
+# The dog barking sound effect, set in the editor
+@export var bark_sound_effect: AudioStream
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+# Mainly used for other scripts to access the _weenieCounter variable
+func get_weiner_counter() -> int:
+	return _weenieCounter
 
 # This allows for bigger foods to cause more growth.
 func grow_weiner_looper(growth_amount: int):
@@ -17,7 +22,6 @@ func grow_weiner_looper(growth_amount: int):
 		grow_weiner()
 
 func grow_weiner():
-	
 	# get Node3D refs for the current middle weiner and the back weiner
 	var curMiddleWeiner = get_node("WeinerMiddle")
 	var backWeiner = get_node("WeinerBack")
@@ -40,6 +44,19 @@ func grow_weiner():
 	# reposition the current and back weiner to make space for the new middle weiner
 	curMiddleWeiner.position = Vector3(curMiddleWeiner.position.x, curMiddleWeiner.position.y, curMiddleWeiner.position.z+1);
 	backWeiner.position = Vector3(backWeiner.position.x, backWeiner.position.y, backWeiner.position.z+1);
+
+func dog_bark():
+	sound_player.stream = bark_sound_effect
+	# Change the pitch of the dog bark based on the dog's length
+	sound_player.pitch_scale = (_weenieCounter * 0.1) + 0.4
+	sound_player.play()
+
+func _ready() -> void:
+	add_child(sound_player)
+	
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("bark"):
+		dog_bark()
 
 func _physics_process(delta):
 	# add gravity
