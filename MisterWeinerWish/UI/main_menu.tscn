@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://uklx54nktq4h"]
+[gd_scene load_steps=4 format=3 uid="uid://uklx54nktq4h"]
 
+[ext_resource type="Theme" uid="uid://cxcxrkwa857sa" path="res://UI/Themes/menu_theme.tres" id="1_4us5g"]
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_ckmif"]
 [ext_resource type="PackedScene" uid="uid://b1jnywpht4uww" path="res://Game Management/game.tscn" id="2_lb2a7"]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_4us5g")
 script = ExtResource("1_ckmif")
 game_scene = ExtResource("2_lb2a7")
 
