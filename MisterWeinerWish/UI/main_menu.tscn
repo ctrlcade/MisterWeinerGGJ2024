@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://uklx54nktq4h"]
+[gd_scene load_steps=5 format=3 uid="uid://uklx54nktq4h"]
 
 [ext_resource type="Theme" uid="uid://cxcxrkwa857sa" path="res://UI/Themes/menu_theme.tres" id="1_4us5g"]
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_ckmif"]
 [ext_resource type="PackedScene" uid="uid://b1jnywpht4uww" path="res://Game Management/game.tscn" id="2_lb2a7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gkq75"]
+font_size = 50
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -38,8 +41,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 50
-text = "Mr. Weiner's
-WISH"
+text = "Mr. Weiner's Wish"
+label_settings = SubResource("LabelSettings_gkq75")
 horizontal_alignment = 1
 vertical_alignment = 1
 
