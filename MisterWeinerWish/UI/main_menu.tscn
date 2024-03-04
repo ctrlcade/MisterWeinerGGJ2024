@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://uklx54nktq4h"]
+[gd_scene load_steps=6 format=3 uid="uid://uklx54nktq4h"]
 
 [ext_resource type="Theme" uid="uid://cxcxrkwa857sa" path="res://UI/Themes/menu_theme.tres" id="1_4us5g"]
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_ckmif"]
 [ext_resource type="PackedScene" uid="uid://b1jnywpht4uww" path="res://Game Management/game.tscn" id="2_lb2a7"]
+[ext_resource type="Texture2D" uid="uid://d2ddrrinu48c8" path="res://UI/Themes/UI Resources/main_background.png" id="4_4l8gx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gkq75"]
 font_size = 50
@@ -17,6 +18,16 @@ grow_vertical = 2
 theme = ExtResource("1_4us5g")
 script = ExtResource("1_ckmif")
 game_scene = ExtResource("2_lb2a7")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_4l8gx")
+expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

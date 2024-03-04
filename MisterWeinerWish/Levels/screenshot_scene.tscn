@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://bc0gfuoxp40pb"]
+
+[ext_resource type="PackedScene" uid="uid://dm8haby1hgvvf" path="res://Mr Weiner/test_player.tscn" id="1_vx58v"]
+[ext_resource type="Script" path="res://Food/food_spawner.gd" id="3_unw2b"]
+[ext_resource type="Resource" uid="uid://d17hxma6vish6" path="res://Food/Foods/f_steak.tres" id="9_6km12"]
+[ext_resource type="PackedScene" uid="uid://b7452e3ctc0vq" path="res://Levels/Level.glb" id="10_h3w6u"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2v7l8"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_kq2gt"]
+sky_material = SubResource("ProceduralSkyMaterial_2v7l8")
+
+[sub_resource type="Environment" id="Environment_dcxla"]
+background_mode = 2
+sky = SubResource("Sky_kq2gt")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="TestWorld" type="Node3D"]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dcxla")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, -1.51421e-07, 8.74228e-08, 0, 0.5, 0.866025, -1.74846e-07, -0.866025, 0.5, -1.75613, 5.82485, -2.79431)
+shadow_enabled = true
+
+[node name="FoodSpawnPoints" type="Node3D" parent="."]
+script = ExtResource("3_unw2b")
+foods = Array[Resource("res://Food/food_data.gd")]([ExtResource("9_6km12")])
+
+[node name="Marker3D" type="Marker3D" parent="FoodSpawnPoints" groups=["food_spawn_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.834, 0, 0)
+
+[node name="Marker3D3" type="Marker3D" parent="FoodSpawnPoints" groups=["food_spawn_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.626, 0, 10.407)
+
+[node name="Marker3D4" type="Marker3D" parent="FoodSpawnPoints" groups=["food_spawn_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4491, 0.610776, -6.004)
+
+[node name="Level" parent="." instance=ExtResource("10_h3w6u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.88154, 0.553542, 0)
+
+[node name="MisterWeiner" parent="." instance=ExtResource("1_vx58v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.95123, -0.500001, -0.725343)
