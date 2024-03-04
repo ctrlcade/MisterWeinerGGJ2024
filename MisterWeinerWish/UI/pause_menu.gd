@@ -4,6 +4,7 @@ extends Control
 
 func _ready() -> void:
 	GlobalSettings.connect("ToggleGamePaused", _on_toggle_pause)
+	hide()
 	
 # Using a signal to avoid checking constantly using _process
 func _on_toggle_pause(is_paused: bool) -> void:

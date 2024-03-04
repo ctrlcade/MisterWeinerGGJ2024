@@ -23,6 +23,10 @@ GlobalSettings="*res://Game Management/global_settings.cs"
 
 project/assembly_name="Mister Weiner Wish"
 
+[gui]
+
+theme/custom="res://UI/Themes/menu_theme.tres"
+
 [input]
 
 pause={
