@@ -1,6 +1,10 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cxcxrkwa857sa"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cxcxrkwa857sa"]
 
 [ext_resource type="Texture2D" uid="uid://7nwixg844dyi" path="res://UI/Themes/UI Textures/pixel-art-hot-dog.png" id="1_afiuf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_olcj0"]
+texture = ExtResource("1_afiuf")
+modulate_color = Color(0.568627, 0.568627, 0.568627, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bmfw0"]
 texture = ExtResource("1_afiuf")
@@ -10,10 +14,12 @@ texture = ExtResource("1_afiuf")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_113o8"]
 texture = ExtResource("1_afiuf")
+modulate_color = Color(0.568627, 0.568627, 0.568627, 1)
 
 [resource]
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/font_sizes/font_size = 16
+Button/styles/focus = SubResource("StyleBoxTexture_olcj0")
 Button/styles/hover = SubResource("StyleBoxTexture_bmfw0")
 Button/styles/normal = SubResource("StyleBoxTexture_2tobg")
 Button/styles/pressed = SubResource("StyleBoxTexture_113o8")
